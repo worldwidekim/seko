@@ -1,0 +1,30 @@
+# 리뷰내용 가져오기
+def get_daum_movie_review(movie_id):
+    url = 'https://movie.daum.net/moviedb/grade?movieId={}&type=netizen&page={}'.format(movie_id, page)
+    reviews = []
+    page = 0
+    
+    resp = requests.get(url)
+    soup = BeautifulSoup(resp.text)
+    netizen = soup.select_one('p.desc_review')
+    
+    
+    if netizen:
+        return netizen.get_text()
+    return ""
+    
+    reviews.append(netizen)
+    page += 1
+
+
+
+    ----------
+
+    # 리뷰글 수 가져오기
+url = 'https://movie.daum.net/moviedb/grade?movieId=2725&type=netizen&page=2'
+resp = requests.get(url)
+soup = BeautifulSoup(resp.text)
+review_number = soup.select_one('span.txt_menu')
+print(review_number)
+
+    
