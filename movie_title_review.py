@@ -59,6 +59,7 @@ def get_daum_movie_review(movie_id, page):
     page += 1
 
 
+# 총 리뷰 숫자만 뽑아서 가져오는 새로운 함수
 def get_daum_movie_review_number(movie_id, page):
     url = 'https://movie.daum.net/moviedb/grade?movieId={}&type=netizen&page={}'.format(movie_id, page)
 
