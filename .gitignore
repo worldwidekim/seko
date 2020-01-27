@@ -1,0 +1,5 @@
+# interpreter
+venv
+
+# ide
+__pycache__
